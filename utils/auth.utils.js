@@ -8,7 +8,7 @@ export const checkTokenAndRedirect = (router) => {
 
     tokenValid
       ? router.push('/home') // Token valid, redirect ke /home
-      : (console.log('Token sudah kedaluwarsa'), localStorage.removeItem('token'),(window.location.href = '/login')); // Token kedaluwarsa atau tidak ditemukan
+      : (console.log('Token sudah kedaluwarsa'), localStorage.removeItem('token')); // Token kedaluwarsa atau tidak ditemukan
   }
 };
 
