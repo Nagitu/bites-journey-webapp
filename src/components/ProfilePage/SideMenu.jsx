@@ -5,14 +5,9 @@ import { useAuth } from '../../../utils/AuthContext'
 import { useState,useEffect } from 'react'
 
 const SideMenu = () => {
-    const { logout } = useAuth();
     const [userData, setUserData] = useState(null);
 
-    const handleLogout = () => {
-      // Panggil fungsi logout
-      logout();
-      window.location.href = '/login'
-    };
+    
     const handleEdit = () => {
         window.location.href = '/Profile/edit'
       };
@@ -29,38 +24,29 @@ const SideMenu = () => {
       }, []);
       
     return (
-     <div
-    className=" hidden sm:block md:col-span-1 p-4 border-solid border-2 h-fit w-72  rounded-xl">
-    <div className='flex flex-col gap-4'>
-        <div
-            className="w-full rounded-full border-blue-300 bg-white p-4 flex flex-row justify-between items-center ">
-            <div>
-                {/* Inisial Nama Pengguna sebagai Foto Profil */}
-                <div
-                    className="rounded-full w-12 h-12 bg-blue-500 flex items-center justify-center text-white text-xl">
-                    {userData?.data.username ? userData?.data.username.charAt(0).toUpperCase() : ''}
-                </div>
-            </div>
-            <div className=''>
-                <h2 className="text-lg font-semibold">{userData?.data.username}</h2>
-            </div>
-        </div>
-        <button
-            className="border-transparent  hover:bg-blue-200 rounded-xl focus:border-teal-900 active:border-teal-900">
-            Profil
-        </button>
-        <button
-            onClick={handleEdit}
-            className="border-transparent  hover:bg-blue-200 rounded-xl focus:border-teal-900 active:border-teal-900">
-            Edit Profil
-        </button>
-        <button
-            onClick={handleLogout}
-            className="border-transparent  hover:bg-blue-200 rounded-xl focus:border-teal-900 active:border-teal-900">
-            Logout
-        </button>
-    </div>
-</div>
+      <div className="md:col-span-1 p-4 border-solid border-2 h-fit w-72 rounded-xl relative">
+      <div className="absolute -top-6 right-28  mb-5">
+          <div className="rounded-full mb-5 w-12 h-12 bg-blue-500 flex items-center justify-center text-white text-xl">
+              {userData?.data.username ? userData?.data.username.charAt(0).toUpperCase() : ''}
+          </div>
+      </div>
+  
+      <div className="flex flex-col items-center gap-6 mt-5">
+          <div className="flex flex-col items-center">
+              <h2 className="text-lg text-center font-semibold">{userData?.data.username}</h2>
+              <h2 className="text-sm text-center">{userData?.data.email}</h2>
+              <h2 classna="text-sm text-center">{userData?.data.name}</h2>
+          </div>
+          <button
+              onClick={handleEdit}
+              className="border-transparent w-full bg-sky-400 hover:bg-blue-200 rounded-xl focus:border-teal-900 active:border-teal-900">
+              Edit Profil
+          </button>
+      </div>
+  </div>
+  
+  
+      
     )
 }
 

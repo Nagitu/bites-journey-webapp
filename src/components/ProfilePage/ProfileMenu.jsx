@@ -42,19 +42,30 @@ const ProfileMenu = () => {
     // Fungsi untuk menghapus artikel
     const handleDelete = () => {};
     return (
-        <div
-            className="justify-center pt-10 mb-0 mt-10 text-black h-full sm:h-fit  border-2 border-black-500 border-solid">
-            <div className="flex flex-row h-screen ">
-                <div className='w-1/4 h-full '>
-                    <SideMenu/>
+        <div className='flex flex-col border-solid border-black overflow-hidden'>
+        <div className='w-screen h-96'>
+            <img
+                src="https://images.unsplash.com/photo-1560807707-8cc77767d783"
+                alt="Deskripsi Gambar"
+                className='w-full h-full'
+            />
+        </div>
+    
+        <div className="justify-center pt-10 text-black h-full sm:h-fit border-2 border-black-500 border-solid overflow-scroll ">
+            <div className="flex flex-row h-screen">
+                <div className='w-1/4 h-full hidden sm:block '>
+                    <SideMenu />
                 </div>
-                <div className="w-3/4 p-4 mb-4 rounded border-solid border-red flex flex-col ">
-                    <main className="w-full buttom-0 flex flex-row flex-3 ">
-                        {articles.map((article) => (<ArticleCard key={article.id} articles={article}/>))}
+                <div className="w-3/4 p-4 mb-4 rounded border-solid border-red flex flex-col">
+                    <main className="w-full buttom-0 flex flex-row flex-3 flex-wrap ">
+                        {articles.map((article) => (<ArticleCard key={article.id} articles={article} />))}
                     </main>
                 </div>
             </div>
         </div>
+    </div>
+    
+    
     );
 };
 

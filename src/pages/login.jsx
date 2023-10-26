@@ -9,8 +9,8 @@ const Login = () => {
     const router = useRouter();
 
     useEffect(() => {
-        checkTokenAndRedirect(router);
-    }, [router]);
+        checkTokenAndRedirect(router, '/home', '/login','/login');
+      }, []);
 
     return (
         <div>
