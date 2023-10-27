@@ -51,22 +51,7 @@ const CreateArticleForm = () => {
         // Append the image file
         formData.append('file', image);
 
-        try {
-            const response = await axios.post(
-                'http://localhost:9000/api/v1/article/create',
-                formData,
-                {
-                    headers: {
-                        'Authorization': token,
-                        'Content-Type': 'multipart/form-data', // Atur tipe konten untuk FormData
-                    }
-                }
-            );
-
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
+        createArticle(formData)
     };
 
     useEffect(() => {
@@ -85,9 +70,13 @@ const CreateArticleForm = () => {
     }, []);
 
     return (
-        <div className='w-7/12 h-3/4 border-violet-400 border-2 rounded-xl flex flex-col gap-5 items-center'>
-            <div className="m-2 relative w-3/4 border-2 border-blue-400 ring-2 ring-offset-lime-50 rounded-lg">
-                <label htmlFor="title" className="absolute  -top-2 left-2 bg-white px-1">
+        <div
+            className=' bg-blur-lg bg-white bg-opacity-40 backdrop-blur-md backdrop-filter w-7/12 h-3/4 border-black border-2 rounded-xl flex flex-col gap-5 items-center'>
+            <div
+                className="m-2 relative w-3/4 border-2 border-black ring-2 ring-offset-lime-50 rounded-lg">
+                <label
+                    htmlFor="title"
+                    className="absolute text-black -top-2 left-2 bg-white px-1">
                     Title
                 </label>
                 <input
@@ -96,25 +85,28 @@ const CreateArticleForm = () => {
                     name="title"
                     value={title}
                     onChange={handleTitleChange}
-                    className="border rounded-md w-full p-2 text-center"/>
+                    className="border rounded-md w-full p-2 text-center text-black"/>
             </div>
-            <div className="m-4 relative w-3/4 h-48 border-2 border-blue-400 ring-2 ring-offset-lime-50 rounded-lg">
-                <label htmlFor="content" className="absolute -top-2 left-2 bg-white px-1">
+            <div
+                className="m-4 relative w-3/4 h-48 border-2 border-black ring-2 ring-offset-lime-50 rounded-lg">
+                <label
+                    htmlFor="content"
+                    className="absolute text-black -top-2 left-2 bg-white px-1">
                     Content
                 </label>
                 <textarea
-                placeholder='Type a containt here'
+                    placeholder='Type a containt here'
                     id="content"
                     name="content"
                     value={content}
                     onChange={handleContentChange}
-                    className="border rounded-md w-full h-48 p-2"/>
+                    className="border text-black rounded-md w-full h-48 p-2"/>
             </div>
             <div className="mb-4 relative flex flex-col items-center">
-                <label htmlFor="categories" className=" bg-white px-1">
+                <label htmlFor="categories" className="text-black bg-white px-1">
                     Categories
                 </label>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap text-black">
                     {
                         categories && categories.length > 0
                             ? (categories.map((category) => (
@@ -133,7 +125,7 @@ const CreateArticleForm = () => {
                     }
                 </div>
             </div>
-            <div className="mb-4 relative p-2">
+            <div className="mb-4 relative p-2 border-2 border-black rounded-xl">
                 <label htmlFor="image" className="absolute -top-2 left-2 bg-transparent px-1">
                     Image
                 </label>
@@ -145,6 +137,14 @@ const CreateArticleForm = () => {
                     onChange={handleImageChange}
                     className="border rounded-md w-full p-2"/>
             </div>
+            
+                <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="bg-blue-500 text-black rounded-lg p-2 w-1/4 self-center hover:bg-blue-700">
+                    Submit
+                </button>
+            
         </div>
 
     );
