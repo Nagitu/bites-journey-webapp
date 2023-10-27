@@ -45,12 +45,12 @@ function ArticleCard({articles}) {
 
     return (
         <div
-            className="bg-white p-4 mb-4 shadow rounded-2xl w-full border-solid border-2 border-gray-500">
-                 <div className='border border-solid border-blue-200 rounded-xl'>
+            className="relative bg-opacity-40 backdrop-filter rounded-lg p-6 mx-auto max-w-sm">
+                 <div className='border  border-solid border-blue-200 rounded-xl' >
                 <img
-                    src={articles.image}
-                    alt={articles.title}
-                    className="w-full h-40 object-cover"/>
+                    src={`http://localhost:9000/public/${articles.image}`}
+                   
+                    className="w-full h-40 object-cover rounded-lg"/>
             </div>
             <h3 className="text-xl font-semibold">{articles.title}</h3>
             <p className="text-gray-600">{articles.content}</p>
