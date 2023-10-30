@@ -1,27 +1,26 @@
 import Image from 'next/image'
 import getProfileData from '../../../utils/Profile'
 import React from 'react'
-import { useAuth } from '../../../utils/AuthContext'
 import { useState,useEffect } from 'react'
 
-const SideMenu = () => {
-    const [userData, setUserData] = useState(null);
+const SideMenu = ({userData}) => {
+    // const [userData, setUserData] = useState(null);
 
-    
+  
     const handleEdit = () => {
         window.location.href = '/Profile/edit'
       };
 
-    useEffect(() => {
-        async function fetchData() {
-          const data = await getProfileData();
-          if (data) {
-            setUserData(data);
-            console.log(data);
-          }
-        }
-        fetchData();
-      }, []);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //       const data = await getProfileData();
+    //       if (data) {
+    //         setUserData(data);
+    //         console.log(data);
+    //       }
+    //     }
+    //     fetchData();
+    //   }, []);
       
     return (
       <div className="md:col-span-1 p-4 border-solid border-2 h-fit w-72 rounded-xl relative">

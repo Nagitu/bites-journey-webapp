@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {useAuth} from '../../../utils/AuthContext';
+import {useAuth} from '../../../../utils/AuthContext';
 import Link from 'next/link';
 
 const Login_form = () => {
@@ -20,7 +20,7 @@ const Login_form = () => {
         try {
             // Panggil fungsi login dengan data dari form
             await login(formData);
-            window.location.href = '/home'
+            window.location.href = '/'
         } catch (error) {
             console.error('Error:', error);
             // Handle login error

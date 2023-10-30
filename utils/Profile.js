@@ -14,9 +14,9 @@ export default async function getProfileData(user, apikey) {
 
         if (response.ok) {
             const result = await response.json();
-            console.log(result);
+          
             const data = { data: result.responseData.data, newAccessToken: result.newAccessToken };
-            console.log(data);
+           
             localStorage.setItem('token', result.newAccessToken);
             return data;
         } else {
