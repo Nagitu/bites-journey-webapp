@@ -20,7 +20,7 @@ const Login_form = () => {
         try {
             // Panggil fungsi login dengan data dari form
             await login(formData);
-            window.location.href = '/home'
+            window.location.href = '/'
         } catch (error) {
             console.error('Error:', error);
             // Handle login error

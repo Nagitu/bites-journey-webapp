@@ -1,6 +1,6 @@
 import axios from 'axios';
 import FormData from 'form-data';
-
+import jwtDecode from 'jwt-decode';
 
 export const getArticles = async () => {
     const jwtToken = localStorage.getItem('token');
@@ -54,7 +54,7 @@ export const getArticleByID = async (id) => {
         url: `http://localhost:9000/api/v1/article/delete/${id}`,
         headers: {
           'Authorization': jwtToken,
-          'x-api-key': apikey
+          'x-api-key': 'binar-36'
         }
       };
       const response = await axios.request(config);
@@ -82,6 +82,23 @@ export const getArticleByID = async (id) => {
       });
   }
   
+  export function fetchUserArticles() {
+    const token = localStorage.getItem('token');
+    const decodedToken = jwtDecode(token);
+    const user = decodedToken.uid_users;
+  
+    const config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: `http://localhost:9000/api/v1/article/${user}`,
+      headers: {
+        'Authorization': `${token}`,
+        'x-api-key': 'binar-36'
+      }
+    };
+  
+    return axios.request(config);
+  }
   
   
   

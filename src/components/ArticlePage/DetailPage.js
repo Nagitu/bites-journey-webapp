@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {getArticleByID} from '../../../utils/Articles';
+import {getArticleByID} from '../../utils/Articles';
 
 function DetailPage({id}) {
     const [article, setArticle] = useState(

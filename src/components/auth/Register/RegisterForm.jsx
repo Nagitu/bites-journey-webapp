@@ -18,6 +18,7 @@ const RegisterForm = () => {
 
     const handleRegister = async () => {
         try {
+            console.log(formData);
             // Panggil fungsi register dengan data dari form
             await registerUser(formData);
 
