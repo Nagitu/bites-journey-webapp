@@ -3,7 +3,7 @@ import InputForm from './InputForm'
 import SubmitButton from './SubmitButton';
 import CategoriesCheck from './CategoriesCheck';
 import UploadButton from './UploadButton';
-import { createArticle } from '../../../utils/Articles';
+import { createArticle } from '../../utils/Articles';
 import { useDispatch ,useSelector} from 'react-redux';
 import { setTitle,setContent,setCategories,setImage,toggleCategory } from '@/Redux/articleSlice';
 

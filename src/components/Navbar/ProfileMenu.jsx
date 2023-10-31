@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { useAuth } from '../../../utils/AuthContext';
+import { useAuth } from '../../utils/AuthContext';
 
 const ProfileMenu = ({ userData }) => {
   const { logout } = useAuth();
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-console.log(userData);
   const toggleProfileDropdown = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };

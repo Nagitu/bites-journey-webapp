@@ -1,13 +1,13 @@
-import { AuthProvider } from '../../utils/AuthContext';
+import { AuthProvider } from '../utils/AuthContext';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import FormComponent from '@/components/CreateArticleForm/FormComponent';
 import NavbarComponent from '@/components/Navbar/NavbarComponent';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import store from '../Redux/store';
-import getProfileData from '../../utils/Profile';
+import getProfileData from '../utils/Profile';
 import { setUserData } from '../Redux/userDataSlice';
-import { checkTokenAndRedirect } from '../../utils/auth.utils';
+import { checkTokenAndRedirect } from '../utils/auth.utils';
 import ArticlePage from '@/components/ArticlePage/ArticlePage';
 
 const Articles = () => {

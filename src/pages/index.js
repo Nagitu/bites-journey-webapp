@@ -1,11 +1,11 @@
 import LandingPage from '@/components/LandingPage/LandingPage';
-import { AuthProvider } from '../../utils/AuthContext';
+import { AuthProvider } from '../utils/AuthContext';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { checkTokenAndRedirect } from '../../utils/auth.utils';
+import { checkTokenAndRedirect } from '../utils/auth.utils';
 import NavbarComponent from '@/components/Navbar/NavbarComponent';
 import { useDispatch, useSelector } from 'react-redux';
-import getProfileData from '../../utils/Profile';
+import getProfileData from '../utils/Profile';
 import { setUserData } from '@/Redux/userDataSlice';
 
 const Index = () => {

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getArticles} from '../../../utils/Articles';
+import {getArticles} from '../../utils/Articles';
 import Card from './Card'; // Import komponen Card
 import SideContent from './SideContent';
 

@@ -1,12 +1,12 @@
-import { AuthProvider } from '../../../utils/AuthContext';
-import { checkPage, checkTokenAndRedirect } from '../../../utils/auth.utils';
+import { AuthProvider } from '../../utils/AuthContext';
+import { checkPage, checkTokenAndRedirect } from '../../utils/auth.utils';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import FormComponent from '@/components/CreateArticleForm/FormComponent';
 import NavbarComponent from '@/components/Navbar/NavbarComponent';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import store from '../../Redux/store';
-import getProfileData from '../../../utils/Profile';
+import getProfileData from '../../utils/Profile';
 import { setUserData } from '../../Redux/userDataSlice';
 
 

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import getProfileData from '../../../utils/Profile'
+import getProfileData from '../../utils/Profile'
 import React from 'react'
 import { useState,useEffect } from 'react'
 

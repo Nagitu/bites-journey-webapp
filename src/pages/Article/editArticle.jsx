@@ -1,11 +1,11 @@
 import React from 'react'
 import ProfileMenu from '@/components/ProfilePage/ProfileMenu';
-import {AuthProvider} from '../../../utils/AuthContext';
+import {AuthProvider} from '../../utils/AuthContext';
 import Navbar from '@/components/Navbar/Navbar';
 import { useEffect } from 'react';
-import { checkTokenAndRedirect } from '../../../utils/auth.utils';
+import { checkTokenAndRedirect } from '../../utils/auth.utils';
 import { Router, useRouter } from 'next/router';
-import EditFormComponent from '@/components/editProfile/editFormComponent';
+import EditFormComponent from '@/components/editPrsofile/EditProfile.Component';
 
 
 const editArticle = () => {

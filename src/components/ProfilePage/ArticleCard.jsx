@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { deleteArticleById } from '../../../utils/Articles';
+import { deleteArticleById } from '../../utils/Articles';
 function ArticleCard({ articles }) {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -47,7 +47,7 @@ function ArticleCard({ articles }) {
         </div>
       ) : (
         <div>
-          <div className='border  border-solid border-blue-200 rounded-xl' >
+          <div key={articles.id_article} className='border  border-solid border-blue-200 rounded-xl' >
             <img
               src={`http://localhost:9000/public/${articles.image}`}
               className="w-full h-40 object-cover rounded-lg"
@@ -59,7 +59,7 @@ function ArticleCard({ articles }) {
             <button onClick={handleEdit} className="bg-blue-500 text-white px-4 py-2 mr-2 rounded">
               Edit
             </button>
-            <button onClick={showDeleteConfirmation} className="bg-red-500 text-white px-4 py-2 rounded">
+            <button onClick={showDeleteConfirmation} key={articles.id_article} className="bg-red-500 text-white px-4 py-2 rounded">
               Hapus
             </button>
           </div>

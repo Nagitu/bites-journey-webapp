@@ -1,3 +1,7 @@
+
+import axios from "axios";
+import jwtDecode from "jwt-decode";
+
 export default async function getProfileData(user, apikey) {
     try {
         const token = localStorage.getItem('token'); // Mendapatkan token dari localStorage
@@ -26,3 +30,26 @@ export default async function getProfileData(user, apikey) {
         console.error(error);
     }
 }
+
+export const updateUSer = ( formData) => {
+    const token = localStorage.getItem('token');
+    const id = jwtDecode(token).uid_users
+    return axios.put(`http://localhost:9000/api/v1/user/update/${id}`, formData, {
+      headers: {
+        // 'Authorization': token,
+        'x-api-key': 'binar-36', // Ganti dengan API key yang sesuai
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => {
+        console.log(response.data);
+        return response.data; // Kembalikan data respons
+      })
+      .catch(error => {
+        console.log(error);
+        throw error;
+      });
+    console.log(username);
+  }
+
+

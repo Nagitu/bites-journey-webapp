@@ -4,12 +4,14 @@ import React from 'react';
 import SideMenu from './SideMenu';
 import ArticleCard from './ArticleCard';
 import { useState, useEffect } from 'react';
-import { fetchUserArticles } from '../../../utils/Articles';
-import EditProfileForm from './EditProfileForm'; // Import komponen EditProfileForm
+import { fetchUserArticles } from '../../utils/Articles';
+import EditFormComponent from '../editProfile/EditProfile.Component';
+
 
 const ProfileMenu = ({ userData }) => {
   const [articles, setArticles] = useState([]);
   const [isEditingProfile, setIsEditingProfile] = useState(false);
+  
 
   useEffect(() => {
     fetchUserArticles()
@@ -25,6 +27,13 @@ const ProfileMenu = ({ userData }) => {
   const handleEdit = () => {
     {isEditingProfile ?setIsEditingProfile(false):setIsEditingProfile(true)};
   };
+  const handleCancel = () => {
+    {isEditingProfile ?setIsEditingProfile(false):setIsEditingProfile(true)};
+  };
+  const handleSave =() => {
+    console.log(editedData)
+  }
+  
 
   // Fungsi untuk menghapus artikel
   const handleDelete = () => {};
@@ -64,16 +73,8 @@ const ProfileMenu = ({ userData }) => {
             </div>
           </div>
           
-            {isEditingProfile ? (<div className=''>
-              <EditProfileForm
-                userData={userData}
-                onCancel={() => setIsEditingProfile(false)}
-                onSave={(editedData) => {
-                  // Lakukan penyimpanan data yang diedit, contohnya: updateUserProfile(editedData)
-                  // Setelah penyimpanan, atur kembali isEditingProfile menjadi false
-                  setIsEditingProfile(false);
-                }}
-              />
+            {isEditingProfile ? (<div className='w-3/4 p-4 mb-4 rounded border-solid border-red flex flex-col'>
+             <EditFormComponent userData={userData} onCancel={handleCancel} onSave={handleSave}/>
               </div>
             ) : (<div className="w-3/4 p-4 mb-4 rounded border-solid border-red flex flex-col">
             <main className="w-full buttom-0 flex flex-row flex-3 flex-wrap ">

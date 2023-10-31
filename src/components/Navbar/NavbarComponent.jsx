@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import NavbarMenu from './NavbarMenu'
 import SearchBar from './Searchbar'
 import Link from 'next/link'
-import { useAuth } from '../../../utils/AuthContext'
+import { useAuth } from '../../utils/AuthContext'
 import Image from 'next/image'
 import ProfileMenu from './ProfileMenu'
 
