@@ -7,7 +7,6 @@ import { checkTokenAndRedirect } from '../../utils/auth.utils';
 import { Router, useRouter } from 'next/router';
 import EditFormComponent from '@/components/editPrsofile/EditProfile.Component';
 
-
 const editArticle = () => {
     // const router = useRouter()
     // useEffect(() => {
