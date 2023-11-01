@@ -1,6 +1,6 @@
 import axios from 'axios';
 import FormData from 'form-data';
-import jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode'
 
 export const getArticles = async () => {
     const jwtToken = localStorage.getItem('token');
@@ -64,22 +64,20 @@ export const getArticleByID = async (id) => {
       throw error; // Dilemparkan untuk menangani kesalahan di tempat lain
     }
   }
-  export const createArticle = (formData) => {
+  export const createArticle =async  (formData) => {
     const token = localStorage.getItem('token');
-    return axios.post(`http://localhost:9000/api/v1/article/create`, formData, {
-      headers: {
-        'Authorization': token,
-        'x-api-key': 'binar-36', // Ganti dengan API key yang sesuai
-      }
-    })
-      .then(response => {
-        console.log(response.data);
-        return response.data; // Kembalikan data respons
-      })
-      .catch(error => {
-        console.log(error);
-        throw error;
+    try {
+      const response = await axios.post('http://localhost:9000/api/v1/article/create', formData, {
+        headers: {
+          'Authorization': token,
+          'x-api-key': 'binar-36',
+        },
       });
+  
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   }
   
   export function fetchUserArticles() {
