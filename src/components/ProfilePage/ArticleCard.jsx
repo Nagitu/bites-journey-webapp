@@ -56,9 +56,9 @@ function ArticleCard({ articles }) {
           <h3 className="text-xl font-semibold">{articles.title}</h3>
           <p className="text-gray-600">{articles.content}</p>
           <div className="mt-4">
-            <button onClick={handleEdit} className="bg-blue-500 text-white px-4 py-2 mr-2 rounded">
+            {/* <button onClick={handleEdit} className="bg-blue-500 text-white px-4 py-2 mr-2 rounded">
               Edit
-            </button>
+            </button> */}
             <button onClick={showDeleteConfirmation} key={articles.id_article} className="bg-red-500 text-white px-4 py-2 rounded">
               Hapus
             </button>
