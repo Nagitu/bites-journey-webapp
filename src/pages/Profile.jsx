@@ -7,6 +7,7 @@ import { checkTokenAndRedirect } from '../utils/auth.utils'; // Mengimpor fungsi
 import { useRouter } from 'next/router'; // Mengimpor useRouter
 import getProfileData from '../utils/Profile';
 import NavbarComponent from '@/components/Navbar/NavbarComponent';
+import React from 'react';
 
 
 const Profile = () => {

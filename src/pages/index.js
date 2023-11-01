@@ -1,6 +1,6 @@
 import LandingPage from '@/components/LandingPage/LandingPage';
 import { AuthProvider } from '../utils/AuthContext';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { checkTokenAndRedirect } from '../utils/auth.utils';
 import NavbarComponent from '@/components/Navbar/NavbarComponent';

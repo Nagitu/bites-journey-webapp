@@ -2,8 +2,9 @@ import {AuthProvider} from '../utils/AuthContext';
 import RegisterComponent from '@/components/auth/Register/RegisterComponent';
 import {checkTokenAndRedirect} from '../utils/auth.utils';
 import {useRouter} from 'next/router';
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import NavbarComponent from '@/components/Navbar/NavbarComponent';
+
 
 const Login = () => {
     const router = useRouter();

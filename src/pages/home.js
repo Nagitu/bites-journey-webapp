@@ -1,6 +1,6 @@
 import ProfileMenu from '@/components/ProfilePage/ProfileMenu';
 import { AuthProvider } from '../utils/AuthContext';
-import { useEffect ,useState} from 'react';
+import React, { useEffect ,useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUserData } from '../Redux/userDataSlice';
 import { checkTokenAndRedirect } from '../utils/auth.utils'; // Mengimpor fungsi checkTokenAndRedirect
