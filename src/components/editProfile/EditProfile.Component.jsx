@@ -29,11 +29,11 @@ const EditProfileForm = ({ userData, onCancel }) => {
       formDatas.append('name', formData.name);
       console.log(formDatas);
       const response = await updateUSer(formDatas)
-      
+      window.location.reload();
       if (response.status === 200) {
         // Data berhasil diperbarui, lakukan sesuatu jika perlu
         console.log('Data berhasil diperbarui');
-        window.location.reload()
+        window.location.reload();
       }
     } catch (error) {
       // Tangani kesalahan jika terjadi
