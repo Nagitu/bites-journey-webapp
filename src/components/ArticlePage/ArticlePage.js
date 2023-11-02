@@ -37,18 +37,19 @@ const ArticlePage = () => {
     };
 
     return (
-        <div className="flex h-full m-20 sm:m-10 p-8">
-            <main className="w-full sm:w-full overflow-hidden flex flex-col">
+        <div className="flex h-screen m-20 sm:m-10 p-8">
+            <main className="w-full sm:w-full overflow-auto flex flex-col">
                 {error ? (
                     <p>{error}</p>
                 ) : (
                     articles.map((article, index) => (
                         <Card
-                            article={article}
-                            visible={index === currentImageIndex}
-                            onClick={() => handleCardClick(article)} // Menambahkan event onClick
-                            key={article.id}
-                        />
+                        article={article}
+                        visible={index === currentImageIndex}
+                        onClick={() => handleCardClick(article)}
+                        key={article.id}
+                        className="w-72 h-96" 
+                    />
                     ))
                 )}
             </main>
