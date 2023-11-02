@@ -18,7 +18,7 @@ export default async function (req, res) {
         const config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url:  `http://localhost:9000/api/v1/user/${user}`,
+            url:  `https://bites-journey-2.fly.dev/api/v1/user/${user}`,
             headers: {
                 'Authorization': token,
                 'x-api-key': 'binar-36',

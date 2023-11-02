@@ -8,7 +8,7 @@ export const getArticles = async () => {
     const config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://localhost:9000/api/v1/article/',
+        url: 'https://bites-journey-2.fly.dev/api/v1/article/',
         headers: {
             'Authorization': jwtToken,
             'x-api-key': apikey
@@ -29,7 +29,7 @@ export const getArticleByID = async (id) => {
       const config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `http://localhost:9000/api/v1/article/id/${id}`,
+        url: `https://bites-journey-2.fly.dev/api/v1/article/id/${id}`,
         headers: {
           'Authorization': jwtToken,
           'x-api-key': apikey,
@@ -51,7 +51,7 @@ export const getArticleByID = async (id) => {
       const config = {
         method: 'delete',
         maxBodyLength: Infinity,
-        url: `http://localhost:9000/api/v1/article/delete/${id}`,
+        url: `https://bites-journey-2.fly.dev/api/v1/article/delete/${id}`,
         headers: {
           'Authorization': jwtToken,
           'x-api-key': 'binar-36'
@@ -67,7 +67,7 @@ export const getArticleByID = async (id) => {
   export const createArticle =async  (formData) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.post('http://localhost:9000/api/v1/article/create', formData, {
+      const response = await axios.post('https://bites-journey-2.fly.dev/api/v1/article/create', formData, {
         headers: {
           'Authorization': token,
           'x-api-key': 'binar-36',
@@ -88,7 +88,7 @@ export const getArticleByID = async (id) => {
     const config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: `http://localhost:9000/api/v1/article/${user}`,
+      url: `https://bites-journey-2.fly.dev/api/v1/article/${user}`,
       headers: {
         'Authorization': `${token}`,
         'x-api-key': 'binar-36'

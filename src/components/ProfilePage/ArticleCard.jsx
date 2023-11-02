@@ -49,7 +49,7 @@ function ArticleCard({ articles }) {
         <div>
           <div key={articles.id_article} className='border  border-solid border-blue-200 rounded-xl' >
             <img
-              src={`http://localhost:9000/public/${articles.image}`}
+              src={`https://bites-journey-2.fly.dev/public/${articles.image}`}
               className="w-full h-40 object-cover rounded-lg"
             />
           </div>

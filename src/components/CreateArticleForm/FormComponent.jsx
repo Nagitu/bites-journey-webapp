@@ -44,7 +44,7 @@ const FormComponent = () => {
     const token = localStorage.getItem('token')
     try {
       const response = await axios.post(
-        'http://localhost:9000/api/v1/article/create',
+        'https://bites-journey-2.fly.dev/api/v1/article/create',
         formData,
         {
           headers: {
@@ -66,7 +66,7 @@ const FormComponent = () => {
         const headers = new Headers({'x-api-key': 'binar-36'});
 
         // Mengambil data kategori dari API saat komponen dimuat
-        fetch(`http://localhost:9000/api/v1/category`, {headers})
+        fetch(`https://bites-journey-2.fly.dev/api/v1/category`, {headers})
             .then(
                 response => response.json()
             )
