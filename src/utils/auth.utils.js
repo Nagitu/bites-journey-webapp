@@ -6,7 +6,7 @@ export const checkTokenAndRedirect = (router, validPage, expiredPage, loginPage)
     const token = localStorage.getItem('token');
     
     if (!token) {
-      console.log('Token tidak ditemukan, redirect ke halaman login');
+      // console.log('Token tidak ditemukan, redirect ke halaman login');
       router.push(loginPage);
       return; // Hentikan eksekusi jika token tidak ditemukan
     }
@@ -16,7 +16,7 @@ export const checkTokenAndRedirect = (router, validPage, expiredPage, loginPage)
     if (tokenValid) {
       router.push(validPage); // Redirect ke halaman validPage
     } else {
-      console.log('Token sudah kedaluwarsa');
+      // console.log('Token sudah kedaluwarsa');
       localStorage.removeItem('token');
       router.push(expiredPage); // Redirect ke halaman expiredPage
     }
