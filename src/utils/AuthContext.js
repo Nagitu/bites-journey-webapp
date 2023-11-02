@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext();
-const BASE_URL = 'http://localhost:9000/api/v1/auth';
+const BASE_URL = 'https://bites-journey-2.fly.dev/api/v1/auth';
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);

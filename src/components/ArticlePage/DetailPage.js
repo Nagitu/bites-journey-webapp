@@ -3,7 +3,7 @@ import {getArticleByID} from '../../utils/Articles';
 
 function DetailPage({id}) {
     const [article, setArticle] = useState(
-        {title: 'Loading...', image: 'http://localhost:9000/public/default-image.jpg', content: 'Loading...'}
+        {title: 'Loading...', image: 'https://bites-journey-2.fly.dev/public/default-image.jpg', content: 'Loading...'}
     );
 
     useEffect(() => {

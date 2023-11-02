@@ -34,7 +34,7 @@ export default async function getProfileData(user, apikey) {
 export const updateUSer = ( formData) => {
     const token = localStorage.getItem('token');
     const id = jwtDecode(token).uid_users
-    return axios.put(`http://localhost:9000/api/v1/user/update/${id}`, formData, {
+    return axios.put(`https://bites-journey-2.fly.dev//api/v1/user/update/${id}`, formData, {
       headers: {
         // 'Authorization': token,
         'x-api-key': 'binar-36', // Ganti dengan API key yang sesuai
