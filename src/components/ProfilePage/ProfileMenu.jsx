@@ -5,7 +5,7 @@ import SideMenu from './SideMenu';
 import ArticleCard from './ArticleCard';
 import { useState, useEffect } from 'react';
 import { fetchUserArticles } from '../../utils/Articles';
-import EditFormComponent from '../editProfile/EditProfile.Component';
+import EditProfileForm from '../editProfile/EditProfile.Component';
 
 
 const ProfileMenu = ({ userData }) => {
@@ -74,7 +74,7 @@ const ProfileMenu = ({ userData }) => {
           </div>
           
             {isEditingProfile ? (<div className='w-3/4 p-4 mb-4 rounded border-solid border-red flex flex-col'>
-             <EditFormComponent userData={userData} onCancel={handleCancel} onSave={handleSave}/>
+             <EditProfileForm userData={userData} onCancel={handleCancel} onSave={handleSave}/>
               </div>
             ) : (<div className="w-3/4 p-4 mb-4 rounded border-solid border-red flex flex-col">
             <main className="w-full buttom-0 flex flex-row flex-3 flex-wrap ">
