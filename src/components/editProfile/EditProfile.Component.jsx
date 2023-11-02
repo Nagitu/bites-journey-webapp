@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EditProfileInput from './editProfile.input';
+import EditProfileInput from './EditProfile.input';
 import ActionButton from './Action.Button';
 import { updateUSer } from '@/utils/Profile';
 
